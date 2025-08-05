@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <main id="login-container" role="main" aria-labelledby="loginTitle">
+    <h2 id="loginTitle">Login</h2>
+
+    <div id="error" class="error" role="alert" aria-live="assertive" style="display:none;"></div>
+
+    <form id="loginForm" aria-describedby="formHelp">
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Usuário"
+        autocomplete="username"
+        required
+      />
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Senha"
+        autocomplete="current-password"
+        required
+      />
+      <button type="submit" id="btnSubmit">Entrar</button>
+    </form>
+  </main>
+
+  <script type="module" src="login.js"></script>
+</body>
+</html>

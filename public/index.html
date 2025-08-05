@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Painel T.I - Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Painel T.I</h1>
+    <nav>
+      <button onclick="showSection('scripts')" class="nav-btn active">Scripts</button>
+      <button onclick="showSection('logs')" class="nav-btn">Logs</button>
+      <button onclick="showSection('relatorios')" class="nav-btn">Relatórios</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Input para alvo -->
+    <div class="input-group">
+  <label for="alvo">IP ou Nome da Máquina</label>
+  <input type="text" id="alvo" placeholder="Ex: 192.168.0.10 ou PC-NOME" />
+  <button id="btnExecutar" disabled>Executar Script</button>
+</div>
+
+<section id="scripts" class="dashboard-section" style="display:none;">
+  <h2>Central de Scripts</h2>
+  <div class="card-container">
+    <div class="card">
+      <h3>Reiniciar Spooler</h3>
+      <p>Reinicia o serviço spooler de impressão remotamente.</p>
+      <button onclick="executarScript('reiniciar-spooler.bat')">Executar</button>
+    </div>
+    <div class="card">
+      <h3>Limpar Temp</h3>
+      <p>Remove arquivos temporários para liberar espaço.</p>
+      <button onclick="executarScript('limpar-temp.bat')">Executar</button>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Seção Logs -->
+    <section id="logs" class="dashboard-section">
+      <h2>Logs de Execução</h2>
+      <pre id="logOutput" class="log-box">Carregando...</pre>
+    </section>
+
+    <!-- Seção Relatórios -->
+    <section id="relatorios" class="dashboard-section">
+      <h2>Relatórios Inteligentes</h2>
+      <div id="relatorioOutput" class="report-box">Carregando análise...</div>
+    </section>
+  </main>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

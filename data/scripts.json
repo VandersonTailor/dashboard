@@ -1,0 +1,12 @@
+[
+  {
+    "id": "limpar-temp.bat",
+    "nome": "Limpar Temp",
+    "comando": "limpar-temp.bat"
+  },
+  {
+    "id": "reiniciar-spooler.bat",
+    "nome": "Reiniciar Spooler",
+    "comando": "reiniciar-spooler.bat"
+  }
+]

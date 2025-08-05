@@ -1,0 +1,170 @@
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(-45deg, #1d1a1a, #241933, #1d1a1a);
+  background-size: 400% 400%;
+  animation: bgGradient 15s ease infinite;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+/* Animação de fundo */
+@keyframes bgGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Mensagem de erro */
+#error {
+  color: #ff6b6b;
+  margin-bottom: 10px;
+  display: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  min-height: 1.2em; /* evitar pulo de layout */
+}
+
+/* Container do formulário */
+#login-container {
+  background: rgba(31, 29, 32, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #ab78fc;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition: box-shadow 0.3s ease;
+}
+
+#login-container:hover {
+  box-shadow: 0 0 30px #7a37e8;
+}
+
+/* Inputs */
+input {
+  width: 80%;
+  max-width: 400px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #3b2c4a;
+  background: #2c2336;
+  color: #eee;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border 0.3s ease, background 0.3s ease;
+  font-family: inherit;
+}
+
+input:focus {
+  border: 2px solid #7a37e8;
+  background: #1f1a26;
+  outline-offset: 2px;
+  outline-color: #9d5bfa;
+  outline-style: solid;
+}
+
+/* Botão */
+button {
+  width: 60%;
+  max-width: 200px;
+  background: #7a37e8;
+  border: none;
+  padding: 14px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px #7a37e8aa;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 15px;
+  font-family: inherit;
+}
+
+button:disabled {
+  background: #a685f9;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+button:hover:not(:disabled) {
+  background: #9d5bfa;
+  box-shadow: 0 6px 20px #aa7bfa;
+}
+/* Input com erro */
+input.error, select.error, textarea.error {
+  border-color: #ff6b6b !important;
+  background-color: #3a1f2e;
+  animation: shake 0.3s ease;
+}
+
+/* Animação "shake" para erro */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25%, 75% { transform: translateX(-6px); }
+  50% { transform: translateX(6px); }
+}
+
+/* Mensagem aparece com fade */
+.message {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  min-height: 1.5em; /* evita pulo */
+}
+
+.message.show {
+  opacity: 1;
+}
+
+/* Sucesso em verde */
+.message.success {
+  color: #34d399;
+}
+
+/* Erro em vermelho */
+.message.error {
+  color: #ff6b6b;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+  input {
+    width: 90%;
+  }
+  button {
+    width: 80%;
+  }
+  #login-container {
+    padding: 30px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  input {
+    width: 100%;
+  }
+  button {
+    width: 90%;
+  }
+  #login-container {
+    padding: 25px 20px;
+  }
+}
