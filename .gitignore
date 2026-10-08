@@ -1,0 +1,7 @@
+node_modules/
+logs/
+*.log
+cookies.txt
+.env
+# third-party binaries (download PsTools from Microsoft Sysinternals if needed)
+PSTools/
