@@ -36,7 +36,7 @@ app.use(cors({
 
 app.use(
   session({
-    secret: "",
+    secret: process.env.SESSION_SECRET || "change-me",
     resave: false,
     saveUninitialized: false,
     cookie: { secure: false },
@@ -45,7 +45,7 @@ app.use(
 
 // Usuários e nomes
 const usuarios = new Map([
-  ["admin", "admin123"],
+  ["admin", process.env.ADMIN_PASSWORD || "change-me"],
 ]);
 
 const nomesFormatados = new Map([
